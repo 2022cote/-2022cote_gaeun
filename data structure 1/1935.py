@@ -39,10 +39,10 @@ for i in exp: #후위표기식 돌면서,
   elif i == "+": #더하기+ 연산자 만나면, 스택 맨 뒤+맨뒤에서 바로 앞 값을 빼서 계산 후 stack 리스트 뒷부분에 추가
     stack.append(stack.pop() + stack.pop())
   elif i == "-":
-    stack.append(stack.pop()*(-1) + stack.pop())
+    stack.append(stack.pop()*(-1) + stack.pop()) #pop 순서 주의!!!! 뒷값이 먼저 pop되므로, -1 곱하여 더하기로 구현.
   elif i == "*":
     stack.append(stack.pop() * stack.pop())
   elif i == "/":
-    stack.append(stack.pop()**(-1) * stack.pop())
+    stack.append(stack.pop()**(-1) * stack.pop()) #pop 순서 주의!!!! 분모가 먼저 pop되어 꺼내지므로, 분모에 지수 -1제곱 해서 곱하기.
 
 print("%.2f" %stack.pop()) #최종 계산값을 stack 리스트에서 꺼내, 소수점2자리 실수로 출력
