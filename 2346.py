@@ -15,27 +15,21 @@
 """
 from collections import deque
 
-dq = deque() #풍선 입출력,이동할 덱 생성
-#dic = {} #풍선번호와 값을 매칭해 저장할 딕셔너리 생성
-numdq = deque() #풍선번호
-num = [] # 출력할 풍선번호
+queue = deque() #풍선 입출력,이동할 덱 생성
+result = [] # 출력할 풍선번호
 
 N = int(input()) #풍선의 개수 N 입력받기
 
-for i in range(N):
-  numdq.append(i+1)
+queue = deque(enumerate(map(int,input().split()))) 
+#각 풍선 안의 종이에 적혀 있는 수 입력받기. 
+#map 함수로 int 형태로 바꾼 후, enumerate함수 이용해 (index, val)형태로 변환, 덱에 담기.
 
-arr = list(input().split()) #각 풍선 안의 종이에 적혀 있는 수 입력받기
+while queue: #큐에 값이 있는 동안 반복
+  index, val = queue.popleft() #풍선 터뜨리고, 그 값 저장해두기
+  if val > 0: #풍선값이 양수인 경우
+    queue.rotate(-(val - 1))
+  else: #풍선값이 음수인 경우
+    queue.rotate(-val)
+  result.append(index + 1) 
 
-for i in arr:
-  dq.append(i)
-
-while dq:
-  popped_balloon = int(dq.popleft())
-  dq.rotate(-(popped_balloon - 1))
-  print(dq)
-  num.append(numdq.popleft())
-  numdq.rotate(-(popped_balloon - 1))
-  print(numdq)
-
-print(num)
+print(' '.join(map(str,result)))
