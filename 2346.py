@@ -30,6 +30,6 @@ while queue: #큐에 값이 있는 동안 반복
     queue.rotate(-(val - 1))
   else: #풍선값이 음수인 경우
     queue.rotate(-val)
-  result.append(index + 1) 
+  result.append(index + 1) #인덱스는 0부터 시작이므로, +1.
 
 print(' '.join(map(str,result)))
