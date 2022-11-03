@@ -23,9 +23,9 @@ visited = [False for _ in range(N+1)]
 
 # 트리 구조 입력
 for _ in range(N-1):
-  node1, node2 = map(int, input().split())
-  tree[node1].append(node2)
-  tree[node2].append(node1)
+  a, b = map(int, input().split())
+  tree[a].append(b)
+  tree[b].append(a)
 
 # root부터 DFS 탐색 시작,
 # 연결된 자식노드들 중 방문하지 않은 노드를 방문하면서,
