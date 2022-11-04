@@ -1,5 +1,5 @@
 """
-BOJ #14675 
+BOJ #14675
 단절점과 단절선 (https://www.acmicpc.net/problem/14675)
 """
 

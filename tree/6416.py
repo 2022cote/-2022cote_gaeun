@@ -5,7 +5,6 @@ BOJ #6416
 
 import sys
 
-
 testcases = sys.stdin.readlines()
 
 print(testcases)

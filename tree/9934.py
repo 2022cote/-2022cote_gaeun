@@ -1,5 +1,5 @@
 """
-BOJ #9934 
+BOJ #9934
 완전 이진 트리 (https://www.acmicpc.net/problem/9934)
 """
 
