@@ -25,6 +25,13 @@ for i,n in enumerate(N):
   res += (string.index(n))*(B**i)
 print(res)
 
+# 다른 풀이 방법
+""" 
+#int(변환할string,n진법)
+print(int(a, int(b)))
+"""
+
+# 메모리 초과 실패
 """
 # N의 숫자를 하나씩 돌면서 실행
 for i in reversed(range(len(N))): # for loop 순서 뒤집어 줘야 함!
