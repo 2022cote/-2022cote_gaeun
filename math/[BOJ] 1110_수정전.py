@@ -6,7 +6,8 @@ BOJ #1110
 # 문제 접근: 
 
 # 추가 메모: 
-# 처음에 n 입력받을때, rstrip 안 해줘서 공백이 포함되니까 while문이 무한루프를 돌았음. ㅠㅠ 꼭 확인하기!
+# 처음에 n 입력받을때, rstrip 안 해줘서 공백이 포함되어 오류. 주의!
+# 문자열 비교시, "08"=="8" -> False 주의!
 
 import sys
 input = sys.stdin.readline

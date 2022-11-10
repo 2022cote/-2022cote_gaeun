@@ -8,8 +8,11 @@ BOJ #2745
 # 해당 자릿수가 문자라면(A:65 ~ Z:90), 아스키코드 -55 값으로 계산 수행
 # -> 메모리 초과. ㅠㅠ (해결완료)
 
-# 다른 풀이 찾아보니, 
+# 다른 풀이 방법:
 # 하나의 문자열에 "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" 로 넣어두고, 그 인덱스 값을 계산에 사용.
+
+# 다른 풀이 방법:
+# int(변환할string, n진법)
 
 import sys
 input = sys.stdin.readline
