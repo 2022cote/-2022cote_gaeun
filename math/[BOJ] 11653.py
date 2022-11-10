@@ -13,17 +13,12 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-lst = []
-num = 2
+i = 2
 
-while(n):
+for _ in range(n):
   if n == 1: break
+  if n % i == 0:
+    n = n // i
+    print(i)
   else:
-    if n % num == 0:
-      n = n//num
-      lst.append(num)
-    else:
-      num += 1
-
-for i in lst:
-  print(i)
+    i += 1
