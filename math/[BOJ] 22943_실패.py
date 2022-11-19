@@ -3,7 +3,10 @@ BOJ #22943
 수 (https://www.acmicpc.net/problem/22943)
 """
 
+# 순열. 순열, 조합
+
 import sys
+from itertools import permutations
 input = sys.stdin.readline
 
 def isprimenumber(n):
@@ -25,8 +28,15 @@ def iscondition2(n):
 
 k,m = list(map(int, input().split()))
 cnt = 0
+arr = []
 
-for i in range(1,10**k):
+permut1 = list(map(''.join, permutations(['1','2','3','4','5','6','7','8','9'],1)))
+permut2 = list(map(''.join, permutations(['0','1','2','3','4','5','6','7','8','9'], k-1)))
+for i in permut1:
+  for j in permut2:
+    arr.append(int(i + j))
+
+for i in arr:
   j = i
   while j % m == 0:
     j //= m
