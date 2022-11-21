@@ -10,17 +10,15 @@ BOJ #21275
 
 import sys
 from collections import defaultdict
-from math import log2
 input = sys.stdin.readline
 
 a,b = input().split()
-print(type(a))
 
 num = '0123456789abcdefghijklmnopqrstuvwxyz'
 a2x = defaultdict(list)
 b2x = defaultdict(list)
 
-for i in range(num.index(max(a))+1, 37):
+for i in range(num.index(max(a)), 37):
   if i != 1:
     a2x[int(a,i)].append(i)
 for i in range(num.index(max(b))+1, 37):
@@ -32,7 +30,7 @@ xlst = set(a2x.keys()) & set(b2x.keys())
 for i in xlst:
   if len(a2x[i]) > 1 or len(b2x[i]) > 1:
     print("Multiple")
-  elif len(xlst) == 0 or a2x[i] == b2x[i] or log2(i) >= 63:
+  elif not len(xlst) or a2x[i] == b2x[i]:
     print("Impossible")
   else:
     print(i, *a2x[i], *b2x[i], end=" ")

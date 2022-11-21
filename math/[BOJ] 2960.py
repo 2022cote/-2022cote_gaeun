@@ -3,6 +3,8 @@ BOJ #2960
 에라토스테네스의 체 (https://www.acmicpc.net/problem/2960)
 """
 
+# 풀이를 참고하였습니다.
+
 import sys
 input = sys.stdin.readline
 

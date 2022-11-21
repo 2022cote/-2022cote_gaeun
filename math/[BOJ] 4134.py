@@ -3,8 +3,6 @@ BOJ #4134
 다음 소수 (https://www.acmicpc.net/problem/4134)
 """
 
-# 스스로 풀지 못해 검색하여 해결.
-
 import sys
 input = sys.stdin.readline
 
