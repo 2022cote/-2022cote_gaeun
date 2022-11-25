@@ -4,7 +4,6 @@ input = sys.stdin.readline
 n = int(input())
 total_tip = 0
 line = []
-
 for _ in range(n):
   line.append(int(input()))
 

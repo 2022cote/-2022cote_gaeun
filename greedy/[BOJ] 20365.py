@@ -2,16 +2,13 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-problems = input().rstrip()
+colors = input().rstrip()
+
+# 처음 색으로 일단 전체 칠하기
 cnt = 1
+first_color = colors[0]
 
-current = problems[0] # 현재 색깔
-
-for i in range(1, len(problems)):
-  if problems[i] == current: # 현재 색깔과 직전 색깔이 같은 경우 pass
-    pass
-  else: # 현재 색깔과 직전 색깔이 다른 경우    
-    if problems[i] != problems[0]: # 현재 색깔이 처음 색깔과 다르면 cnt+=1
-      cnt += 1
-    current = problems[i] # 현재 색깔 update
+for i in range(1, len(colors)):
+  if colors[i] != first_color and colors[i] != colors[i-1]: # 색이 바뀌고, 처음 색도 아닌 경우
+    cnt +=1
 print(cnt)
