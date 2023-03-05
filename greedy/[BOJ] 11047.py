@@ -1,15 +1,14 @@
+# 동전 0 - https://www.acmicpc.net/problem/11047
+
 import sys
 input = sys.stdin.readline
 
-n,k = map(int, input().split())
-a = []
-cnt = 0
-for _ in range(n):
-  a.append(int(input())) # 몫이 어차피 0 나오니까 입력값 걸러줄 필요 없음!
+N,K = map(int, input().split())
+coins = [int(input()) for i in range(N)]
+coins.sort(reverse=True)
 
-a.sort(reverse=True)
-
-for i in a:
-  cnt += k//i
-  k %= i
-print(cnt)
+ans = 0
+for i in coins:
+  ans += K//i
+  K %= i
+print(ans)

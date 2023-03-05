@@ -1,12 +1,11 @@
 import sys
 input = sys.stdin.readline
 
-n = int(input())
-p = list(map(int, input().split()))
-total = 0
+N = int(input())
+P = list(map(int,input().split()))
+P.sort(reverse=True)
 
-p.sort(reverse=True)
-
-for i in range(len(p)):
-  total += p[i] * (i+1)
-print(total)
+ans = 0
+for i in range(N):
+  ans += (i+1) * P[i]
+print(ans)
